@@ -43,6 +43,9 @@ hr {
 #ajaxloader {
   height: 100%;
 }
+html{
+  height: 100%;
+}
 
 body {
     -webkit-text-rendering: optimizeLegibility; 
@@ -52,6 +55,7 @@ body {
     font-family: Helvetica;
     -webkit-perspective: 800;
     -webkit-transform-style: preserve-3d;
+    height: 100%;
 }
 
 .selectable, input, textarea {
@@ -76,6 +80,7 @@ body {
     padding: 0;
     -webkit-user-select:none;  /* from iScroll at http://cubiq.org/iscroll */
     -webkit-text-size-adjust:none;
+    overflow:hidden;
 }
 body > * {
     background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#333), to(#5e5e65));
@@ -512,6 +517,9 @@ h1 + ul, h2 + ul, h3 + ul, h4 + ul, h5 + ul, h6 + ul {
 	width:100%;
 	background:#aaa;
 	overflow:hidden;
+min-height: 100%;
+height: auto !important;
+margin: 0 auto -86px;
 }
 
 #scroller {
@@ -565,4 +573,10 @@ h1 + ul, h2 + ul, h3 + ul, h4 + ul, h5 + ul, h6 + ul {
    So tell browsers to break long words */
 #detail-Title, #detail-Date, #detail-Address, #detail-Desc {
    word-wrap: break-word;
-};
+}
+
+#footer{
+z-index:2;
+position:relative;
+height:43px;
+}

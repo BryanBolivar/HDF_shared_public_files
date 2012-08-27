@@ -4,15 +4,20 @@ function initialize_iScroll() {
 	setHeight();	// Set the wrapper height. Not strictly needed, see setHeight() function below.
 
 	// Please note that the following is the only line needed by iScroll to work. Everything else here is to make this demo fancier.
-	myScroll = new iScroll('wrapper', {hScrollbar:false});
+	myScroll = new iScroll('wscroller', {hScrollbar:false});
 }
 
 // Change wrapper height based on device orientation. Not strictly needed by iScroll, you may also use pure CSS techniques.
 function setHeight() {
     var headerH = $('#header').is(":visible") ? $('#header').height() : 0;
     var footerH = $('#footer').is(":visible") ? $('#footer').height() : 0;
+    var mb = -86;
+    if($("#monthcal").css("display") === "block"){headerH = 268; mb = -311}else{headerH = 43}
     var wrapperH = $(window).height() - headerH - footerH;
-    $('#wrapper').height( wrapperH );
+    console.log(mb);
+
+    $('#wscroller').height( wrapperH );
+    $('#wrapper').css( "margin-bottom", mb );
 }
 
 // Prevent the whole screen to scroll when dragging elements outside of the scroller (ie:header/footer).
