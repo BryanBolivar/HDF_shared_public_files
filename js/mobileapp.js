@@ -744,6 +744,19 @@ function date_to_string( d )
 function add_event_to_calendar(event_id) {
 
 
+
+
+
+   if ((navigator.platform!="iPhone")&&(navigator.platform!="iPad")&&(navigator.platform!="iPod")){
+     if(navigator.platform.match("Linux")){
+
+    }else{
+      alert('On a mobile device, this would now be added to your calendar.');
+    }
+        
+      }
+      
+
     var event = hdf_events[event_id];
     var start_date_str = hdf_strings[event[8]];
 
@@ -773,7 +786,7 @@ function add_event_to_calendar(event_id) {
         var minutes = parseInt(time_parts[1]);
         start_date.setHours(start_date.getHours() + hours);
         start_date.setMinutes(start_date.getMinutes() + minutes);
-        data['start_hours'] = start_date.getHours();
+        data['start_hours'] = start_date.getHours(); fire
         data['start_minutes'] = start_date.getMinutes();
       }
       $.ajax( {
