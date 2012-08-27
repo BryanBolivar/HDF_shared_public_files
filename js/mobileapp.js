@@ -619,14 +619,14 @@ function make_grid_cal( )
 	html_str += "<td>";
 
 	if( month_cnt > 0 ) {   // No left arrow if this is 1st month
-   html_str += "<img border=0 onclick='set_date_to_first_day_of_this_month(" + (month_cnt-1) + ");' src='../../public/images/arrow_left.png'>";
+   html_str += "<img border=0 onclick='set_date_to_first_day_of_this_month(" + (month_cnt-1) + ");' src='./images/arrow_left.png'>";
  }
 
  html_str +="</td>\n<td colspan=5>" + month_names[ current_month.getMonth( ) ]
  + " " + current_month.getFullYear( ) + "</td>\n<td>\n";
 
 	if( month_cnt < 2 ) { // No right arrow if this is last month
-   html_str += "<img border=0 onclick='set_date_to_first_day_of_this_month(" + (month_cnt+1) + ");' src='../../public/images/arrow_right.png'>";
+   html_str += "<img border=0 onclick='set_date_to_first_day_of_this_month(" + (month_cnt+1) + ");' src='./images/arrow_right.png'>";
  }
 
 	//--------------------------------------------------------------------
