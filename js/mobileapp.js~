@@ -757,14 +757,12 @@ function crop_string(str) {
 
 function setup_email_phone_clicks( )
 {
-    $(".email-link").unbind("click");
     $(".email-link").click( function( ) {    // In case there are several
 	    device_send_email($(this).attr('to'),
 			      $(this).attr('subject'),
 			      $(this).attr('body') );
 	});
 
-    $(".phone-link").unbind("click");
     $(".phone-link").click( function( ) {    // In case there are several
 	    device_call_phone_number( $(this).text( ) );
 	});

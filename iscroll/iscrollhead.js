@@ -23,3 +23,43 @@ function setHeight() {
 // Prevent the whole screen to scroll when dragging elements outside of the scroller (ie:header/footer).
 // If you want to use iScroll in a portion of the screen and still be able to use the native scrolling, do *not* preventDefault on touchmove.
 $(document).bind('touchmove', function (e) { e.preventDefault(); });
+
+function scroll_list( )
+{
+   // Now scroll the list so that the current selection is at the top
+   setHeight();
+   if(myScroll){    // Was iScroll properly initialized?
+     myScroll.refresh();
+
+     if( showinggrid ) {
+	   myScroll.scrollTo( 0, 0, 0 );   // Must scroll to top or does
+	   // not show
+   } else {
+    myScroll.scrollToElement( "#list" + selected_date, 0 );
+  }
+}
+   else   // Handle case that iScroll was not initialized properly
+    if(!showinggrid && selected_date)
+     window.scroll(0,$("#list" + selected_date).offset().top);
+   else
+    window.scroll(0,0);
+}
+
+function scroll_reset_height( )
+{
+    setHeight();
+    if(myScroll){
+	myScroll.refresh();
+    }
+}
+
+function scroll_to_top( )
+{
+   if(myScroll){    // Is iScroll initialized?
+       myScroll.scrollTo( 0, 0, 0 );   // Scroll to top to show text
+   } else {
+       // for show detail also top off the window
+       $('#wrapper').scrollTop(0);
+       window.scroll(0,0);
+   }
+}
