@@ -576,14 +576,14 @@ function make_grid_cal( )
 	html_str += "<td>";
 
 	if( month_cnt > 0 ) {   // No left arrow if this is 1st month
-	    html_str += "<img border=0 onclick='set_date_to_first_day_of_this_month(" + (month_cnt-1) + ");' src='/public/sharedhtml/images/arrow_left.png'>";
+	    html_str += "<img border=0 onclick='set_date_to_first_day_of_this_month(" + (month_cnt-1) + ");' src='./images/arrow_left.png'>";
 	}
 
 	html_str +="</td>\n<td colspan=5>" + month_names[ current_month.getMonth( ) ]
 	    + " " + current_month.getFullYear( ) + "</td>\n<td>\n";
 
 	if( month_cnt < 2 ) { // No right arrow if this is last month
-	    html_str += "<img border=0 onclick='set_date_to_first_day_of_this_month(" + (month_cnt+1) + ");' src='/public/sharedhtml/images/arrow_right.png'>";
+	    html_str += "<img border=0 onclick='set_date_to_first_day_of_this_month(" + (month_cnt+1) + ");' src='./images/arrow_right.png'>";
 	}
 
 	//--------------------------------------------------------------------
@@ -757,14 +757,12 @@ function crop_string(str) {
 
 function setup_email_phone_clicks( )
 {
-    $(".email-link").unbind("click");
     $(".email-link").click( function( ) {    // In case there are several
 	    device_send_email($(this).attr('to'),
 			      $(this).attr('subject'),
 			      $(this).attr('body') );
 	});
 
-    $(".phone-link").unbind("click");
     $(".phone-link").click( function( ) {    // In case there are several
 	    device_call_phone_number( $(this).text( ) );
 	});
