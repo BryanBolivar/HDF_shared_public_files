@@ -14,7 +14,7 @@ var citydata;  // City-specific info like tagline and sponsor HTML
 var hdf_strings; // All stings needed for event listings
 var hdf_events; // An array of events that index into hdf_strings
 var current_city = "";
-var json_doc;
+
 var has_a_city_ever_been_selected = 0;
 
 //----------------------------------------------------------------------
@@ -42,7 +42,7 @@ function initialize_app( )
     // $(".email-link").live('click', function(e) {
     //   return false;
     // });
- $("#backbutton").css("display", "none");
+
 var today = new Date( );
 todaydate = date_to_string(today);
     initialize_iScroll();   // Allows vertical middle to scroll up & down
@@ -64,7 +64,6 @@ function select_city( new_city )
   $("#monthcal").empty();
   $("#mytodaylist").empty();
   $("#mytoplist").empty();
-
   has_a_city_ever_been_selected = 1;
   change_city( new_city );
 
@@ -135,8 +134,7 @@ function insert_city_events( )
 
    $("#mytoplist").empty();
 
-
-
+   
    if( citydata[1] != '' ) {
      $("#mytoplist").append( "<tr class='listitem'><td class='message1' colspan=2 onclick='showabout( );' style='padding: 5px;'>"
       + citydata[1] + "</td></tr>" );
@@ -145,7 +143,6 @@ function insert_city_events( )
      $("#mytoplist").append( "<tr class='listitem'><td class='message2' colspan=2 onclick='showabout( );' style='padding: 5px;font-size:12px'>"
       + citydata[2] + "</td></tr>" );
    }
-
 
    $("#mytodaylist").empty();
     $("#mytodaylist").append( html_str ); // Insert into the DOM
@@ -381,11 +378,11 @@ function showoptions( ) {
    $("#eventdetail").css("display", "none");
    $("#footer").css("display", "none");
    $("#aboutthisapp").css("display", "none");
-   $("#backbutton").css("display", "none");
+
    // Show the About This App page
    $("#options").css("display", "inline");
    $("#pagetitle").text("Pick a Metro");
-   //$("#backbutton").css("display", "inline");
+   $("#backbutton").css("display", "inline");
    $("#changecity").css("display", "none");
 
    scroll_list( );
@@ -619,14 +616,14 @@ function make_grid_cal( )
 	html_str += "<td>";
 
 	if( month_cnt > 0 ) {   // No left arrow if this is 1st month
-   html_str += "<img border=0 onclick='set_date_to_first_day_of_this_month(" + (month_cnt-1) + ");' src='./images/arrow_left.png'>";
+   html_str += "<img border=0 onclick='set_date_to_first_day_of_this_month(" + (month_cnt-1) + ");' src='../../public/images/arrow_left.png'>";
  }
 
  html_str +="</td>\n<td colspan=5>" + month_names[ current_month.getMonth( ) ]
  + " " + current_month.getFullYear( ) + "</td>\n<td>\n";
 
 	if( month_cnt < 2 ) { // No right arrow if this is last month
-   html_str += "<img border=0 onclick='set_date_to_first_day_of_this_month(" + (month_cnt+1) + ");' src='./images/arrow_right.png'>";
+   html_str += "<img border=0 onclick='set_date_to_first_day_of_this_month(" + (month_cnt+1) + ");' src='../../public/images/arrow_right.png'>";
  }
 
 	//--------------------------------------------------------------------
@@ -744,19 +741,6 @@ function date_to_string( d )
 function add_event_to_calendar(event_id) {
 
 
-
-
-
-   if ((navigator.platform!="iPhone")&&(navigator.platform!="iPad")&&(navigator.platform!="iPod")){
-     if(navigator.platform.match("Linux")){
-
-    }else{
-      alert('On a mobile device, this would now be added to your calendar.');
-    }
-        
-      }
-      
-
     var event = hdf_events[event_id];
     var start_date_str = hdf_strings[event[8]];
 
@@ -786,7 +770,7 @@ function add_event_to_calendar(event_id) {
         var minutes = parseInt(time_parts[1]);
         start_date.setHours(start_date.getHours() + hours);
         start_date.setMinutes(start_date.getMinutes() + minutes);
-        data['start_hours'] = start_date.getHours(); fire
+        data['start_hours'] = start_date.getHours();
         data['start_minutes'] = start_date.getMinutes();
       }
       $.ajax( {
