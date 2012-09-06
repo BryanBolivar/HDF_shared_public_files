@@ -504,7 +504,7 @@ function make_flat_list( )
 		if( event[8] == event[9] ) {  // Don't list time unless single-day event
 		    table_row += "<td class='etime'>" + hdf_strings[ event[10] ] + "<span class='am'>" + event[11] + "&nbsp;</span></td>";
 		} else {
-		    table_row += "<td></td>";
+		    table_row += "<td class='etime'></td>";
 		}
 		var short_title = hdf_strings[ event[0] ];
 
