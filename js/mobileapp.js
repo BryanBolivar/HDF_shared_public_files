@@ -36,6 +36,13 @@ function initialize_app( )
 	    return false;
 	});
 
+    $(".external-link").unbind("click");
+    $(".external-link").click(function(event) {
+        var url = $(this).attr("href");
+        device_open_url(url);
+        return false;
+    });
+
 
     // Click "email this event" and an email is built in device's emailer
     // DEVICE SPECIFIC CODE GOES HERE, use var current_event
@@ -342,7 +349,7 @@ function hidedetail( ) {
     var tmp = citydata[0].split('-');
     $("#pagetitle").text( tmp[1] + ': Tech' );
     if( showinggrid ) {
-	$("#monthcal").css("display", "inline");
+	$("#monthcal").css("display", "block");
     }
 
     scroll_list( );
@@ -763,6 +770,13 @@ function setup_email_phone_clicks( )
 			      $(this).attr('subject'),
 			      $(this).attr('body') );
 	});
+
+    $(".external-link").unbind("click");
+    $(".external-link").click(function(event) {
+        var url = $(this).attr("href");
+        device_open_url(url);
+        return false;
+    });
 
     $(".phone-link").unbind("click");
     $(".phone-link").click( function( ) {    // In case there are several

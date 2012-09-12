@@ -45,11 +45,12 @@ hr {
 }
 html{
   height: 100%;
+  overflow: hidden;
 }
 
 body {
     -webkit-text-rendering: optimizeLegibility; 
-    overflow-x: hidden;
+    overflow: hidden;
     -webkit-user-select: none;
     -webkit-text-size-adjust: none;
     font-family: Helvetica;
@@ -84,6 +85,13 @@ body {
 }
 body > * {
     background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#333), to(#5e5e65));
+}
+
+#header {
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 h1, h2 {
     font: bold 18px Helvetica;
@@ -545,20 +553,22 @@ margin: 0 auto -86px;
     background-color : transparent;
 }
 
+
 #pagetitle {
     position: absolute;
     overflow: hidden;
     top: 10px;
-    margin: 0;
+    margin: auto;
     height: 40px;
     font-size: 20px;
     font-weight: bold;
     text-align: center;
-    left: 10px;
+    left: 0px;
     text-shadow: rgba(0,0,0,1) 0 -1px 1px;
     text-overflow: ellipsis;
-    white-space: nowrap;
     color: #fff;
+    max-width: 55%;
+    right: 0;
 }
 
 /* Some events contain long URLs that are too wide.
@@ -568,7 +578,10 @@ margin: 0 auto -86px;
 }
 
 #footer{
-z-index:2;
-position:relative;
-height:43px;
+z-index: 2;
+position: fixed;
+height: 43px;
+bottom: 0;
+left: 0;
+right: 0;
 }

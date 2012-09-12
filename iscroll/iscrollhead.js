@@ -12,12 +12,17 @@ function setHeight() {
     var headerH = $('#header').is(":visible") ? $('#header').height() : 0;
     var footerH = $('#footer').is(":visible") ? $('#footer').height() : 0;
     var mb = -86;
-    if($("#monthcal").css("display") === "block"){headerH = 268; mb = -311}else{headerH = 43}
+    if($("#monthcal").css("display") == "block"){
+      headerH = parseInt($("#header").css("height")); 
+      mb = (-348) - (headerH - 305);
+    }else{
+      headerH = 43
+    }
     var wrapperH = $(window).height() - headerH - footerH;
     console.log(mb);
-
     $('#wscroller').height( wrapperH );
     $('#wrapper').css( "margin-bottom", mb );
+    
 }
 
 // Prevent the whole screen to scroll when dragging elements outside of the scroller (ie:header/footer).
