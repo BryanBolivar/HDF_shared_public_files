@@ -16,6 +16,11 @@ a.detail {
     display:block;
 }
 
+a.detail:active{
+    background-color: #0033cc;
+    color: white;
+}
+
 .ititle {
     font-size: 15px;
     padding-left: 8px;
