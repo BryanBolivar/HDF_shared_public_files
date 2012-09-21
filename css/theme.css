@@ -16,7 +16,7 @@ a.detail {
     display:block;
 }
 
-a.detail:active{
+a.detail:active, a.detail.fake_active{
     background-color: #0033cc;
     color: white;
 }

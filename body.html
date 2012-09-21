@@ -5,6 +5,20 @@
   <script type="text/javascript">
   $(document).ready(function() {
    initialize_app( );
+   /*$(".detail").live("click", function(){
+       $(this).addClass('active');
+       
+   });*/
+   if (navigator.userAgent.toLowerCase().indexOf("android") > -1) {
+    $("a.detail")
+    .bind("touchstart", function () {
+        $(this).addClass("fake_active");
+    })
+    .bind("touchend", function() {
+        $(this).removeClass("fake_active");
+    });
+    }
+     
  });
   </script>
 </head>

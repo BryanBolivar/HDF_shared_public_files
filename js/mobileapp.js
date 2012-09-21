@@ -516,8 +516,7 @@ function make_flat_list( )
 		}
 		var short_title = hdf_strings[ event[0] ];
 
-		table_row += "<td class='ititle'><a class='detail' eventid='" + i + "'>"
-		    + short_title + "</a></td></tr>\n";
+		table_row += "<td class='ititle'><a class='detail' eventid='" + i + "'>" + short_title + "</a></td></tr>\n";
 
 		// Now add a table row for this entry
 		if( !flat_list[ compute_date_str ] ) {
